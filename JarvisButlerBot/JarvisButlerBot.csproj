@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JarvisModuleCore\JarvisModuleCore.csproj">
+      <Project>{281f3a13-3684-459e-af7f-10fcf34cacc7}</Project>
+      <Name>JarvisModuleCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
