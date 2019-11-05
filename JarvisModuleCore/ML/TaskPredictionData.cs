@@ -11,6 +11,8 @@ namespace JarvisModuleCore.ML
         [LoadColumn(2)]
         public string MessageType { get; set; }
         [LoadColumn(3)]
+        public string HasReplyToMessage { get; set; }
+        [LoadColumn(4)]
         public string TaskId { get; set; }
     }
 

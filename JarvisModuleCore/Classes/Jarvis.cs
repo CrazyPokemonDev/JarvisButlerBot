@@ -15,6 +15,7 @@ namespace JarvisModuleCore.Classes
     public class Jarvis : Telegram.Bot.TelegramBotClient
     {
         public List<int> GlobalAdmins { get; } = new List<int>();
+        public string Username { get; set; } = null;
 
         /// <summary>
         /// Creates a new instance of the control part for JARVIS.
@@ -23,7 +24,8 @@ namespace JarvisModuleCore.Classes
         /// <param name="globalAdmins">A list of telegram IDs to be added as initial global admins.</param>
         public Jarvis(string token, int[] globalAdmins = null) : base(token)
         {
-            if (globalAdmins != null) foreach (int id in globalAdmins) this.GlobalAdmins.Add(id);
+            if (globalAdmins != null) foreach (int id in globalAdmins) GlobalAdmins.Add(id);
+            GetMeAsync().ContinueWith(x => Username = x.Result.Username);
         }
 
         /// <summary>
@@ -50,7 +52,7 @@ namespace JarvisModuleCore.Classes
         /// <param name="userWhitelist">If this is present, only returns on messages from one of these users. They are identified by their telegram ID.</param>
         /// <param name="cancellationToken">A cancellation token for the http client and the waiting process</param>
         /// <returns>The reply message.</returns>
-        public async Task<Message> SendTextMessageAndWaitForReply(ChatId chatId, string text, ParseMode parseMode = ParseMode.Default, bool disableWebPagePreview = false,
+        public async Task<Message> SendTextMessageAndWaitForReplyAsync(ChatId chatId, string text, ParseMode parseMode = ParseMode.Default, bool disableWebPagePreview = false,
             bool disableNotification = false, int replyToMessageId = 0, IReplyMarkup replyMarkup = null, bool forceReply = true,
             int[] userWhitelist = null, CancellationToken cancellationToken = default)
         {
@@ -78,6 +80,23 @@ namespace JarvisModuleCore.Classes
                 OnMessage -= messageHandler;
                 return replyMessage;
             }
+        }
+
+        /// <summary>
+        /// Sends a text message as a reply to the given message.
+        /// </summary>
+        /// <param name="message">The message to reply to.</param>
+        /// <param name="text">The text of the message to send</param>
+        /// <param name="parseMode">The parse mode of the message</param>
+        /// <param name="disableWebPagePreview">Whether to disable the preview of webpages</param>
+        /// <param name="disableNotification">Whether to send the message with a silent notification</param>
+        /// <param name="replyMarkup">The message reply markup</param>
+        /// <param name="cancellationToken">A cancellation token for the http client.</param>
+        /// <returns>The reply message.</returns>
+        public async Task<Message> ReplyAsync(Message message, string text, ParseMode parseMode = ParseMode.Default, bool disableWebPagePreview = false,
+            bool disableNotification = false, IReplyMarkup replyMarkup = null, CancellationToken cancellationToken = default)
+        {
+            return await SendTextMessageAsync(message.Chat.Id, text, parseMode, disableWebPagePreview, disableNotification, message.MessageId, replyMarkup, cancellationToken);
         }
     }
 }

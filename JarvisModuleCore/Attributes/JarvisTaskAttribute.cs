@@ -17,6 +17,15 @@ namespace JarvisModuleCore.Attributes
         /// </summary>
         public PossibleMessageTypes PossibleMessageTypes { get; set; } = PossibleMessageTypes.All;
         /// <summary>
+        /// The possible chat types in which the message can be sent
+        /// </summary>
+        public PossibleChatTypes PossibleChatTypes { get; set; } = PossibleChatTypes.All;
+        public string[] Commands { get; set; } = new string[0];
+        /// <summary>
+        /// Alternative setter for only one command string. Will return the first command of the list or null if the list is empty.
+        /// </summary>
+        public string Command { set { Commands = new string[] { value }; } get { return Commands.Length > 0 ? Commands[0] : null; } }
+        /// <summary>
         /// Specifies that a method should be treated as an executable task for the modular JARVIS butler bot. The method must be of the <see cref="ExecuteTask"/> delegate type.
         /// </summary>
         /// <param name="taskId">A unique identifier for this task.</param>
@@ -29,6 +38,7 @@ namespace JarvisModuleCore.Attributes
     [Flags]
     public enum PossibleMessageTypes
     {
+        None = 0,
         Text = 1,
         Photo = 2,
         Audio = 4,
@@ -36,7 +46,19 @@ namespace JarvisModuleCore.Attributes
         Poll = 16,
         Video = 32,
         Voice = 64,
-        All = 127
+        Animation = 128,
+        All = 255
+    }
+
+    public enum PossibleChatTypes
+    {
+        None = 0,
+        Group = 1,
+        Supergroup = 2,
+        AnyGroup = 3,
+        Private = 4,
+        Channel = 8,
+        All = 15
     }
 
     public delegate void ExecuteTask(Message message, Jarvis jarvis);

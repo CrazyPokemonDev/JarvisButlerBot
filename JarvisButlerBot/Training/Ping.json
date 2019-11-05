@@ -1,0 +1,16 @@
+﻿[
+	{ "MessageText": "Jarvis, are you there?", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "hey JARVIS, u there?", "ChatType": "Group", "MessageType": "Animation", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "/ping@JarvisButlerBot", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "Is @JarvisButlerBot still alive?", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "@JarvisButlerBot, can I speak to you for a second?", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "/ping", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "Where is our butler anyway?", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "There he is, my precious JARVIS!", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "I wonder whether @JarvisButlerBot is up again...", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "I demand you show yourself right now!", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "jarvis is back eh", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "omg thats jarvis", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "ping pong @JarvisButlerBot", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
+	{ "MessageText": "Calling JARVIS, over", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" }
+]

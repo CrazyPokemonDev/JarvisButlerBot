@@ -8,6 +8,11 @@ namespace JarvisModuleCore.Classes
     /// </summary>
     public abstract class JarvisModule
     {
+        public abstract string Id { get; }
+        /// <summary>
+        /// The name of the module.
+        /// </summary>
+        public abstract string Name { get; }
         /// <summary>
         /// The version of this module.
         /// </summary>
