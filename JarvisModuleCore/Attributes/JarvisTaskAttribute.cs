@@ -47,6 +47,8 @@ namespace JarvisModuleCore.Attributes
         Video = 32,
         Voice = 64,
         Animation = 128,
+        Media = Photo | Audio | Document | Video | Voice | Animation,
+        AllExceptPoll = All ^ Poll,
         All = 255
     }
 
