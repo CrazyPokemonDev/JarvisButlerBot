@@ -2,14 +2,18 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>1.0.1</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <!--<releaseNotes>Initial Release</releaseNotes>-->
+    <releaseNotes>Fixed dependencies</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <!--<tags>Tag1 Tag2</tags>-->
+    <dependencies>
+      <dependency id="Telegram.Bot" version="[15.0.0]" />
+      <dependency id="Microsoft.ML" version="1.4.0" />
+    </dependencies>
   </metadata>
 </package>
