@@ -1,15 +1,15 @@
 ﻿using JarvisButlerBot.DefaultModules;
+using JarvisButlerBot.Helpers;
 using JarvisModuleCore.Attributes;
 using JarvisModuleCore.Classes;
 using JarvisModuleCore.ML;
 using Microsoft.ML;
-using Microsoft.ML.Transforms.Text;
+using Microsoft.ML.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot.Args;
@@ -28,7 +28,7 @@ namespace JarvisButlerBot
         private static readonly string globalAdminsPath = Path.Combine(baseDirectory, "globalAdmins.txt");
         private static Jarvis jarvis;
         private static readonly ManualResetEvent stopHandle = new ManualResetEvent(false);
-        private static readonly List<JarvisModule> Modules = new List<JarvisModule>();
+        internal static readonly List<JarvisModule> Modules = new List<JarvisModule>();
         private static readonly Dictionary<string, (ExecuteTask Delegate, JarvisTaskAttribute Attributes)> Tasks = new Dictionary<string, (ExecuteTask task, JarvisTaskAttribute attributes)>();
         private static readonly MLContext mlContext = new MLContext(seed: 0);
         private static ITransformer trainedModel;
@@ -122,14 +122,16 @@ namespace JarvisButlerBot
         private static void TrainModel()
         {
             List<TaskPredictionInput> inputs = new List<TaskPredictionInput>();
-            /* Dummy data
-            for (int i = 0; i < 10; i++) inputs.Add(new TaskPredictionInput { ChatType = "private", MessageType = "text", MessageText = "JARVIS, entferne diese Person.", TaskId = "kick" });
-            for (int i = 0; i < 10; i++) inputs.Add(new TaskPredictionInput { ChatType = "private", MessageType = "text", MessageText = "Geh", TaskId = "leave" });
-            for (int i = 0; i < 10; i++) inputs.Add(new TaskPredictionInput { ChatType = "private", MessageType = "text", MessageText = "Baum", TaskId = "scream" });
-            for (int i = 0; i < 10; i++) inputs.Add(new TaskPredictionInput { ChatType = "private", MessageType = "text", MessageText = "Eine rote Nase lacht selten blöd.", TaskId = "think" });
-            for (int i = 0; i < 10; i++) inputs.Add(new TaskPredictionInput { ChatType = "private", MessageType = "text", MessageText = "HIER FLIEGT GLEICH ALLES IN DIE LUFT!", TaskId = "explode" });*/
+            // Dummy data
+            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "JARVIS, entferne diese Person.", TaskId = "kick" });
+            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "Geh", TaskId = "leave" });
+            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "Baum", TaskId = "scream" });
+            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "Eine rote Nase lacht selten blöd.", TaskId = "think" });
+            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "HIER FLIEGT GLEICH ALLES IN DIE LUFT!", TaskId = "explode" });//*/
 
             foreach (var module in Modules) inputs.AddRange(module.MLTrainingData);
+
+            inputs.Shuffle(seed: 0);
 
             var trainingData = mlContext.Data.LoadFromEnumerable(inputs);
             var pipeline = ProcessData();
@@ -175,7 +177,7 @@ namespace JarvisButlerBot
                 stopHandle.Set();
             }
 
-            string text = GetText(e.Message).ToLower();
+            string text = GetText(e.Message);
             if (string.IsNullOrWhiteSpace(text)) return;
             MessageEntity[] entities = GetEntities(e.Message);
 
@@ -183,12 +185,16 @@ namespace JarvisButlerBot
             PossibleMessageTypes msgType = GetMessageType(e.Message);
             PossibleChatTypes chatType = GetChatType(e.Message.Chat);
 
-            if (text.Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
+            if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
             {
                 string hasReplyToMessage = (e.Message.ReplyToMessage != null).ToString();
-                var input = new TaskPredictionInput { ChatType = chatType.ToString(), HasReplyToMessage = hasReplyToMessage, MessageText = text, MessageType = msgType.ToString() };
+                var input = new TaskPredictionInput { ChatType = chatType.ToString(), HasReplyToMessage = hasReplyToMessage, 
+                    MessageText = text.Replace($"@{jarvis.Username}", "@Username"), MessageType = msgType.ToString() };
                 var prediction = predictionEngine.Predict(input);
                 var taskId = prediction.TaskId;
+                /*VBuffer<ReadOnlyMemory<char>> names = default;
+                predictionEngine.OutputSchema["Score"].Annotations.GetValue("SlotNames", ref names);
+                for (int i = 0; i < prediction.Score.Length; i++) Console.WriteLine("{0}: {1}", names.GetItemOrDefault(i), prediction.Score[i]);*/
 
                 if (!Tasks.ContainsKey(taskId))
                 {

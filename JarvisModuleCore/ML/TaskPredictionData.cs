@@ -20,5 +20,7 @@ namespace JarvisModuleCore.ML
     {
         [ColumnName("PredictedLabel")]
         public string TaskId;
+
+        public float[] Score;
     }
 }

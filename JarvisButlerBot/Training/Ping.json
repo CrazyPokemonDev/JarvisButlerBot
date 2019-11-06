@@ -1,26 +1,352 @@
 ﻿[
-	{ "MessageText": "Jarvis, are you there?", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "hey JARVIS, u there?", "ChatType": "Group", "MessageType": "Animation", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "/ping@JarvisButlerBot", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "Is @JarvisButlerBot still alive?", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "@JarvisButlerBot, can I speak to you for a second?", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "/ping", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "Where is our butler anyway?", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "There he is, my precious JARVIS!", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "I wonder whether @JarvisButlerBot is up again...", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "I demand you show yourself right now!", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "jarvis is back eh", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "omg thats jarvis", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "ping pong @JarvisButlerBot", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "Calling JARVIS, over", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "r u there", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "r u there", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "jarvis online eh", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "ping", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "@JARVISBUTLERBOT, COME HERE RIGHT NOW!", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "hey doodoohead", "ChatType": "Private", "MessageType": "Text", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "waddup bro", "ChatType": "Group", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "is ma bro jarvis in da house", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "I wish to speak to the butler of this place, if that's possible, thank you.", "ChatType": "Supergroup", "MessageType": "Text", "HasReplyToMessage": "True", "TaskId": "jarvis.default.ping.ping" },
-	{ "MessageText": "hey!", "ChatType": "Private", "MessageType": "Animation", "HasReplyToMessage": "False", "TaskId": "jarvis.default.ping.ping" }
+  {
+    "MessageText": "Jarvis, are you there?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "hey JARVIS, u there?",
+    "ChatType": "Group",
+    "MessageType": "Animation",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "/ping@Username",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Is @Username still alive?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "@Username, can I speak to you for a second?",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "/ping",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Where is our butler anyway?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "There he is, my precious JARVIS!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I wonder whether @Username is up again...",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I demand you show yourself right now!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "jarvis is back eh",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "omg thats jarvis",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "ping pong @Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Calling JARVIS, over",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "r u there",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "r u there",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "jarvis online eh",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "ping",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "@Username, COME HERE RIGHT NOW!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "hey doodoohead",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "waddup bro",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "is ma bro jarvis in da house",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I wish to speak to the butler of this place, if that's possible, thank you.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "hey!",
+    "ChatType": "Private",
+    "MessageType": "Animation",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "@Username come here",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "JARVIS, are you awake?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "/ping@Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "/ping@Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "/ping",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Jarvis, are you online?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Test",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Yo jarvis, can I speak to you for a sec?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I think @Username woke up",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "And that's the story of how my wife broke up with me... But anyway, is @Username still a thing?",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "OH MY GOD, is that JARVIS over there?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I wish jarvis was here.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Hey, Jarvis?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Yo, Jarvis",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Hello @Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I wanna talk to @Username pls",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Nah, just wondering what Jarvis is up to these days.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "@Username, get over here.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I demand to speak to your manager!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Who's in charge here?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I require your assistance.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "@Username, can I have your attention for a second?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I need your help.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Lemme just quickly check whether jarvis is up rn",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "I think @Username should have started by now",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.ping.ping"
+  },
+  {
+    "MessageText": "Welcome back, JARVIS!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.ping.ping"
+  }
 ]

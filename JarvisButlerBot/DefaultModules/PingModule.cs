@@ -22,7 +22,7 @@ namespace JarvisButlerBot.DefaultModules
         [JarvisTask("jarvis.default.ping.ping", Command = "/ping", PossibleMessageTypes = PossibleMessageTypes.All ^ PossibleMessageTypes.Poll)]
         public async void Ping(Message message, Jarvis jarvis)
         {
-            await jarvis.ReplyAsync(message, "Yes, I am here.");
+            await jarvis.ReplyAsync(message, "At your service.");
         }
     }
 }
