@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace JarvisModuleCore.Classes
     {
         public List<int> GlobalAdmins { get; } = new List<int>();
         public string Username { get; set; } = null;
+        public new event EventHandler<MessageEventArgs> OnMessage;
+        private readonly List<(Message Msg, int[] UserWhitelist)> dontRedirectAnswers = new List<(Message Msg, int[] UserWhitelist)>();
 
         /// <summary>
         /// Creates a new instance of the control part for JARVIS.
@@ -24,8 +27,17 @@ namespace JarvisModuleCore.Classes
         /// <param name="globalAdmins">A list of telegram IDs to be added as initial global admins.</param>
         public Jarvis(string token, int[] globalAdmins = null) : base(token)
         {
+            base.OnMessage += Jarvis_OnMessageRedirect;
             if (globalAdmins != null) foreach (int id in globalAdmins) GlobalAdmins.Add(id);
             GetMeAsync().ContinueWith(x => Username = x.Result.Username);
+        }
+
+        private void Jarvis_OnMessageRedirect(object sender, MessageEventArgs e)
+        {
+            if (e.Message.ReplyToMessage == null) OnMessage.Invoke(sender, e);
+            if (dontRedirectAnswers.Any(x => e.Message.ReplyToMessage.MessageId == x.Msg.MessageId && e.Message.Chat.Id == x.Msg.Chat.Id
+                && (x.UserWhitelist == null || x.UserWhitelist.Contains(e.Message.From.Id)))) return;
+            OnMessage.Invoke(sender, e);
         }
 
         /// <summary>
@@ -76,6 +88,7 @@ namespace JarvisModuleCore.Classes
                 }
                 OnMessage += messageHandler;
                 sentMessage = await SendTextMessageAsync(chatId, text, parseMode, disableWebPagePreview, disableNotification, replyToMessageId, replyMarkup, cancellationToken);
+                dontRedirectAnswers.Add((sentMessage, userWhitelist));
                 WaitHandle.WaitAny(new WaitHandle[] { cancellationToken.WaitHandle, mre.WaitHandle });
                 OnMessage -= messageHandler;
                 return replyMessage;
