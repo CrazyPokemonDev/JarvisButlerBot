@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefaultModules\PingModule.cs" />
+    <Compile Include="DefaultModules\ReflectionModule.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +102,10 @@
     <None Include="Training\Ping.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Training\Reflection.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Training\TrainingData.schema.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JarvisModuleCore\JarvisModuleCore.csproj">
@@ -120,5 +125,9 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties training_4reflection_1json__JsonSchema="TrainingData.schema.json" training_4trainingdata_1schema_1json__JsonSchema="http://json-schema.org/draft-04/schema" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

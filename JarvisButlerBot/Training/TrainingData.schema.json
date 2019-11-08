@@ -1,0 +1,72 @@
+﻿{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "MessageText",
+      "ChatType",
+      "MessageType",
+      "HasReplyToMessage",
+      "TaskId"
+    ],
+    "properties": {
+      "MessageText": {
+        "$id": "#/items/properties/MessageText",
+        "type": "string",
+        "title": "Message Text",
+        "pattern": "^(.*)$"
+      },
+      "ChatType": {
+        "$id": "#/items/properties/ChatType",
+        "type": "string",
+        "enum": [
+          "Private",
+          "Group",
+          "Supergroup",
+          "Channel"
+        ],
+        "title": "Chat Type",
+        "pattern": "^(.*)$"
+      },
+      "MessageType": {
+        "$id": "#/items/properties/MessageType",
+        "type": "string",
+        "enum": [
+          "Text",
+          "Photo",
+          "Audio",
+          "Document",
+          "Poll",
+          "Video",
+          "Voice",
+          "Animation"
+        ],
+        "title": "The Messagetype Schema"
+      },
+      "HasReplyToMessage": {
+        "$id": "#/items/properties/HasReplyToMessage",
+        "type": "string",
+        "enum": [
+          "True",
+          "False"
+        ],
+        "title": "Whether the message has a message it replies to"
+      },
+      "TaskId": {
+        "$id": "#/items/properties/TaskId",
+        "type": "string",
+        "title": "The Taskid Schema",
+        "examples": [
+          "jarvis.default.ping.ping"
+        ],
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

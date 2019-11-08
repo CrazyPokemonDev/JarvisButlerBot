@@ -1,0 +1,352 @@
+﻿[
+  {
+    "MessageText": "Can you give me a list of your current modules?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "What modules are you currently using, @Username?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I'd like to see a list of your modules, please.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "/modules@Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey JARVIS, what are you made of?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "/modules",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "/modulelist",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "@Username module list",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "what are your modules again jarvis",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "module list plz",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "yo @Username gimme da modules",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Wakanda modules ya got",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "May I see a list of your modules, please?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey JARVIS, my friend here wants to know what modules you have in store",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "@Username has all kinds of modules, check it out",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Could you please be so kind to show me a list of your modules? Of course only if it doesn't trouble you.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I'd love to see a list of your modules, @Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "List me your modules, please, Jarvis",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "a list of your modules would be nice",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I want a list of your modules, NOW!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "gimme da modules! I NEEDZ DA MODULES!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "@Username, I would very much like to get your modulelist, please",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "A list of @Username's modules would be awesome",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I wanna know which modules @Username has",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "ayy JARVIS bro, gimme yo list of modules aight",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Oh my dear @Username, would you please share your list of modules with good ol' me?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "JARVIS? The module list please.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I'd like to see your modulelist, please.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Your list of modules, pls",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I crave a modulelist from @Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I wish there was a way to find out what kind of modules @Username has rn",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "What kind of modules is @Username up to these days, anyway?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey, what kind of modules do you have?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey JARVIS, do you have any new modules I can play around with?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "list modules",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "modules @Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Accio module list!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I would appreciate it if you showed me the list of your modules immediately, @Username!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey, JARVIS, what modules are currently installed?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "JARVIS, my best and only butler, could you give me a list of your modules?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I'd love to see your module list again, JARVIS",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "@Username really has got a lot of modules installed",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey JARVIS, your module list is quite big, right?",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Oh, by the way, JARVIS, why don't you give me a list of your modules?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "What modules does @Username have again?",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey Big J, wanna gimme a list of modules?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey, wanna check whether @Username has some new modules?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "I wanna see @Username's module list again",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Hey @Username, show me your modules plz",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Give me your module list",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.modulelist"
+  }
+]

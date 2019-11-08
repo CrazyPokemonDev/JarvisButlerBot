@@ -53,6 +53,9 @@ namespace JarvisButlerBot
             jarvis.OnMessage += Jarvis_OnMessage;
             jarvis.StartReceiving();
 
+            Console.WriteLine("Signaling start to modules");
+            foreach (var module in Modules) module.Start(jarvis);
+
             Console.WriteLine("Startup finished");
             stopHandle.WaitOne();
             Console.WriteLine("Shutting down");
@@ -195,7 +198,6 @@ namespace JarvisButlerBot
             if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
             {
                 string hasReplyToMessage = (e.Message.ReplyToMessage != null).ToString();
-                Console.WriteLine(PrepareForPrediction(text, entities));
                 var input = new TaskPredictionInput
                 {
                     ChatType = chatType.ToString(),

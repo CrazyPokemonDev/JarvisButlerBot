@@ -21,5 +21,10 @@ namespace JarvisButlerBot.Helpers
                 list[n] = value;
             }
         }
+
+        public static string EscapeHtml(this string str)
+        {
+            return str.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;");
+        }
     }
 }

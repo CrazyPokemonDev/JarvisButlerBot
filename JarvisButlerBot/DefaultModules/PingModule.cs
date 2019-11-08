@@ -19,7 +19,7 @@ namespace JarvisButlerBot.DefaultModules
         public override Version Version => Version.Parse("1.0.0");
         public override TaskPredictionInput[] MLTrainingData => TrainingData.Ping;
 
-        [JarvisTask("jarvis.default.ping.ping", Command = "/ping", PossibleMessageTypes = PossibleMessageTypes.All ^ PossibleMessageTypes.Poll)]
+        [JarvisTask("jarvis.default.ping.ping", Command = "/ping", PossibleMessageTypes = PossibleMessageTypes.AllExceptPoll)]
         public async void Ping(Message message, Jarvis jarvis)
         {
             await jarvis.ReplyAsync(message, "At your service.");
