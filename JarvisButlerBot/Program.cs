@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Telegram.Bot.Args;
@@ -77,6 +78,7 @@ namespace JarvisButlerBot
         private static void LoadDefaultModules()
         {
             LoadModule(new PingModule());
+            LoadModule(new ReflectionModule());
         }
 
         private static void LoadModules(DirectoryInfo moduleDirectory)
@@ -122,14 +124,19 @@ namespace JarvisButlerBot
         private static void TrainModel()
         {
             List<TaskPredictionInput> inputs = new List<TaskPredictionInput>();
-            // Dummy data
+            /* Dummy data
             for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "JARVIS, entferne diese Person.", TaskId = "kick" });
             for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "Geh", TaskId = "leave" });
             for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "Baum", TaskId = "scream" });
             for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "Eine rote Nase lacht selten blöd.", TaskId = "think" });
-            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "HIER FLIEGT GLEICH ALLES IN DIE LUFT!", TaskId = "explode" });//*/
+            for (int i = 0; i < 50; i++) inputs.Add(new TaskPredictionInput { ChatType = "Private", MessageType = "Text", MessageText = "HIER FLIEGT GLEICH ALLES IN DIE LUFT!", TaskId = "explode" });*/
 
             foreach (var module in Modules) inputs.AddRange(module.MLTrainingData);
+
+            foreach (var notEnoughtData in inputs.GroupBy(x => x.TaskId).Where(x => x.Count() < 50))
+            {
+                Console.WriteLine($"Warning: Only {notEnoughtData.Count()} lines of training data for task {notEnoughtData.Key}, recommended amount is 50.");
+            }
 
             inputs.Shuffle(seed: 0);
 
@@ -188,8 +195,13 @@ namespace JarvisButlerBot
             if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
             {
                 string hasReplyToMessage = (e.Message.ReplyToMessage != null).ToString();
-                var input = new TaskPredictionInput { ChatType = chatType.ToString(), HasReplyToMessage = hasReplyToMessage, 
-                    MessageText = text.Replace($"@{jarvis.Username}", "@Username"), MessageType = msgType.ToString() };
+                var input = new TaskPredictionInput
+                {
+                    ChatType = chatType.ToString(),
+                    HasReplyToMessage = hasReplyToMessage,
+                    MessageText = PrepareForPrediction(text, entities),
+                    MessageType = msgType.ToString()
+                };
                 var prediction = predictionEngine.Predict(input);
                 var taskId = prediction.TaskId;
                 /*VBuffer<ReadOnlyMemory<char>> names = default;
@@ -224,6 +236,33 @@ namespace JarvisButlerBot
                     task.Delegate.Invoke(e.Message, jarvis);
                 }
             }
+        }
+
+        private static string PrepareForPrediction(string text, MessageEntity[] entities)
+        {
+            foreach (var entity in entities)
+            {
+                switch (entity.Type)
+                {
+                    case MessageEntityType.Mention:
+                        if (text.Substring(entity.Offset, entity.Length).ToLower() == jarvis.Username.ToLower()) continue;
+                        text = text.Substring(0, entity.Offset) + "@User" + text.Substring(entity.Offset + entity.Length);
+                        foreach (var e in entities.Except(new MessageEntity[] { entity }))
+                        {
+                            if (e.Offset >= entity.Offset + entity.Length) e.Offset -= entity.Length - 5;
+                        }
+                        break;
+                    case MessageEntityType.TextMention:
+                        text = text.Substring(0, entity.Offset) + "@Mention" + text.Substring(entity.Offset + entity.Length);
+                        foreach (var e in entities.Except(new MessageEntity[] { entity }))
+                        {
+                            if (e.Offset >= entity.Offset + entity.Length) e.Offset -= entity.Length - 8;
+                        }
+                        break;
+                }
+            }
+            text = Regex.Replace(text, Regex.Escape($"@{jarvis.Username}".ToLower()), "@Username");
+            return text;
         }
 
         private static string GetText(Message message)
