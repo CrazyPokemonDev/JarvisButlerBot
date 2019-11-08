@@ -82,6 +82,7 @@ namespace JarvisButlerBot
         {
             LoadModule(new PingModule());
             LoadModule(new ReflectionModule());
+            LoadModule(new MLDataModule());
         }
 
         private static void LoadModules(DirectoryInfo moduleDirectory)
@@ -136,9 +137,14 @@ namespace JarvisButlerBot
 
             foreach (var module in Modules) inputs.AddRange(module.MLTrainingData);
 
-            foreach (var notEnoughtData in inputs.GroupBy(x => x.TaskId).Where(x => x.Count() < 50))
+            IEnumerable<IGrouping<string, TaskPredictionInput>> groupings = inputs.GroupBy(x => x.TaskId);
+            foreach (var notEnoughtData in groupings.Where(x => x.Count() < 50))
             {
                 Console.WriteLine($"Warning: Only {notEnoughtData.Count()} lines of training data for task {notEnoughtData.Key}, recommended amount is 50.");
+            }
+            foreach (var noData in Tasks.Where(x => !groupings.Any(y => y.Key == x.Key)))
+            {
+                Console.WriteLine($"Warning: No data found for task {noData.Key}, recommended amount of lines is 50.");
             }
 
             inputs.Shuffle(seed: 0);
@@ -187,13 +193,13 @@ namespace JarvisButlerBot
                 stopHandle.Set();
             }
 
-            string text = GetText(e.Message);
+            string text = e.Message.GetText();
             if (string.IsNullOrWhiteSpace(text)) return;
-            MessageEntity[] entities = GetEntities(e.Message);
+            MessageEntity[] entities = e.Message.GetEntities();
 
             bool botCommandAtStart(MessageEntity x) => x.Type == MessageEntityType.BotCommand && x.Offset == 0;
-            PossibleMessageTypes msgType = GetMessageType(e.Message);
-            PossibleChatTypes chatType = GetChatType(e.Message.Chat);
+            PossibleMessageTypes msgType = e.Message.GetMessageType();
+            PossibleChatTypes chatType = e.Message.Chat.GetChatType();
 
             if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
             {
@@ -202,7 +208,7 @@ namespace JarvisButlerBot
                 {
                     ChatType = chatType.ToString(),
                     HasReplyToMessage = hasReplyToMessage,
-                    MessageText = PrepareForPrediction(text, entities),
+                    MessageText = text.PrepareForPrediction(entities, jarvis.Username),
                     MessageType = msgType.ToString()
                 };
                 var prediction = predictionEngine.Predict(input);
@@ -238,110 +244,6 @@ namespace JarvisButlerBot
                 {
                     task.Delegate.Invoke(e.Message, jarvis);
                 }
-            }
-        }
-
-        private static string PrepareForPrediction(string text, MessageEntity[] entities)
-        {
-            foreach (var entity in entities)
-            {
-                switch (entity.Type)
-                {
-                    case MessageEntityType.Mention:
-                        if (text.Substring(entity.Offset, entity.Length).ToLower() == "@" + jarvis.Username.ToLower()) continue;
-                        text = text.Substring(0, entity.Offset) + "@User" + text.Substring(entity.Offset + entity.Length);
-                        foreach (var e in entities.Except(new MessageEntity[] { entity }))
-                        {
-                            if (e.Offset >= entity.Offset + entity.Length) e.Offset -= entity.Length - 5;
-                        }
-                        break;
-                    case MessageEntityType.TextMention:
-                        text = text.Substring(0, entity.Offset) + "@Mention" + text.Substring(entity.Offset + entity.Length);
-                        foreach (var e in entities.Except(new MessageEntity[] { entity }))
-                        {
-                            if (e.Offset >= entity.Offset + entity.Length) e.Offset -= entity.Length - 8;
-                        }
-                        break;
-                }
-            }
-            text = Regex.Replace(text, Regex.Escape($"@{jarvis.Username}".ToLower()), "@Username", RegexOptions.IgnoreCase);
-            return text;
-        }
-
-        private static string GetText(Message message)
-        {
-            switch (message.Type)
-            {
-                case MessageType.Audio:
-                case MessageType.Voice:
-                case MessageType.Photo:
-                case MessageType.Video:
-                case MessageType.Document:
-                    return message.Caption;
-                case MessageType.Poll:
-                    return message.Poll.Question;
-                case MessageType.Text:
-                    return message.Text;
-                default:
-                    return null;
-            }
-        }
-
-        private static MessageEntity[] GetEntities(Message message)
-        {
-            switch (message.Type)
-            {
-                case MessageType.Audio:
-                case MessageType.Voice:
-                case MessageType.Photo:
-                case MessageType.Video:
-                case MessageType.Document:
-                    return message.CaptionEntities ?? new MessageEntity[0];
-                case MessageType.Text:
-                    return message.Entities ?? new MessageEntity[0];
-                default:
-                    return new MessageEntity[0];
-            }
-        }
-
-        private static PossibleMessageTypes GetMessageType(Message message)
-        {
-            switch (message.Type)
-            {
-                case MessageType.Audio:
-                    return PossibleMessageTypes.Audio;
-                case MessageType.Voice:
-                    return PossibleMessageTypes.Voice;
-                case MessageType.Photo:
-                    return PossibleMessageTypes.Photo;
-                case MessageType.Video:
-                    return PossibleMessageTypes.Video;
-                case MessageType.Document:
-                    if (message.Animation != null) return PossibleMessageTypes.Animation;
-                    else return PossibleMessageTypes.Document;
-                case MessageType.Poll:
-                    return PossibleMessageTypes.Poll;
-                case MessageType.Text:
-                    return PossibleMessageTypes.Text;
-                default:
-                    return PossibleMessageTypes.All;
-            }
-        }
-
-        private static PossibleChatTypes GetChatType(Chat chat)
-        {
-            switch (chat.Type)
-            {
-                case ChatType.Private:
-                    return PossibleChatTypes.Private;
-                case ChatType.Group:
-                    return PossibleChatTypes.Group;
-                case ChatType.Channel:
-                    return PossibleChatTypes.Channel;
-                case ChatType.Supergroup:
-                    return PossibleChatTypes.Supergroup;
-                default:
-                    return PossibleChatTypes.All;
             }
         }
         #endregion

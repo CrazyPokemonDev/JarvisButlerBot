@@ -52,7 +52,7 @@ namespace JarvisButlerBot.DefaultModules
 
         private InlineKeyboardMarkup GetReplyMarkup(int currentPage)
         {
-            var pageCount = (Program.Modules.Count / modulesPerPage) + 1;
+            var pageCount = Math.Ceiling((float)Program.Modules.Count / modulesPerPage);
             if (pageCount < 2) return null;
             var buttonBack = new InlineKeyboardButton { CallbackData = $"modulePage:{currentPage - 1}", Text = "⬅️" };
             var buttonNext = new InlineKeyboardButton { CallbackData = $"modulePage:{currentPage + 1}", Text = "➡️" };

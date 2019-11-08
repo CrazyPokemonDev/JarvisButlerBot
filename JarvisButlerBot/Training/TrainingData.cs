@@ -23,5 +23,13 @@ namespace JarvisButlerBot.Training
                 return JsonConvert.DeserializeObject<TaskPredictionInput[]>(File.ReadAllText(Path.Combine(trainingDataDirectory, "Reflection.json")));
             }
         }
+
+        public static TaskPredictionInput[] MLData
+        {
+            get
+            {
+                return JsonConvert.DeserializeObject<TaskPredictionInput[]>(File.ReadAllText(Path.Combine(trainingDataDirectory, "MLData.json")));
+            }
+        }
     }
 }

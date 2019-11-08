@@ -1,0 +1,702 @@
+﻿[
+  {
+    "MessageText": "/startlearning",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Hey @Username, please start saving my messages!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Could you please start learning everything I say?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Jarvis, I'd like you to save all the messages from me until I tell you to stop",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Start saving my messages, please!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "@Username, I want you to start saving my messages right NOW!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "bro, could u plz learn my msgs until I say you should stop?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I'd like you to save all my messages from now on.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Hey, can you save my messages for a moment",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Start learning, please",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Jarvis, I want you to start learning from my messages immediately.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "/startlearning",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "/startlearning@Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "/startlearning@Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "start learning",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "learn",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Jarvis, my dear, please start learning, okay?",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I order you to start learning right now, and don't you dare stopping before I tell you to!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "@Username, could you please start learning?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "You will start saving all my messages right now, until I tell you to stop, understood?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "yo J, let's start learning aight",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I've got some new data for you! Let's start learning right away!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Heyyyyyyy, who wants to start learning new data? That's right, @Username does!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "/startlearning",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I've programmed a new task! You know what that means... start learning!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "It's feeding time! Who wants to start learning some data?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Hey JARVIS, wanna start learning some more data?",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Oh, would you look at the time, @Username! It's data learning time again! Let's start right away!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Sometimes I wonder if you ever get tired from learning so much...\nNah, I'm just kidding. Let's go!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "JARVIS, start learning data.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Some more data to learn, @Username!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Please start learning new data.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "yo, more data to learn. leggo.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "More data for you to learn, bro",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "@User calling @Username: More data to learn is on its way!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I've got more data for you to learn! Don't worry, it's harder for me to come up with data than it is for you to learn it.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Hey JARVIS, I want you to start saving the messages I send, no matter where. I'll tell you when it's enough.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I need to start collecting data again. Could you please be so kind to save my messages for me?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Okay JARVIS, I still need you to learn some data. Would you please start again?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "More data, start learning!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "/learn",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "/startlearning",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "let's start LEARNING NEW DATA!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Alright, more data! Start saving.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "There is more data I need you to save, please start now",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "I'm almost finished, just a little bit more! Can you start learning again?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "My dear friend, there is still data to learn! Let's get to it!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Hey Big J, how'd ya like mo' data?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "aight jarvis, we need to save some more messages",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Aaaaaaaaaand some more data, start learning!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.startlearning"
+  },
+  {
+    "MessageText": "Okay, JARVIS, stop saving my messages!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Alright, enough data collected - you can stop now.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "@Username, you can stop collecting data now.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Alright, JARVIS, we're done collecting data.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Enough messages saved for now!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Stop saving messages",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "/stoplearning",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "/stoplearning@Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "No more messages to learn, sorry! We're finished for now.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Yo @Username, stop learning messages.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "No more message saving pls",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "STOP SAVING MY MESSAGES RIGHT NOW!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "yeah, so, we're done collecting data. you can stop.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Aight enough data learned. we're done for now",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Okay that should be enough, no more data saving",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "yo, enough data collected - you can stop now",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "@Username, stop saving my messages",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "that's all, bro - no more data to save!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "okay, that was the last message. you can stop learning them now.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "stop learning",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "/stoplearn",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "We're all done! You can stop saving my messages now.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "yo, enough data saving - stop now",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "enough messages collected, mkay",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "aaaaaaaaand another load of messages finished! please gimme all you've learned",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "alright, we're done. pls gimme the messages you've learned",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "enough message saving and data hoarding, @Username!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "We've saved pretty many messages now... that should suffice for now. Pls stop",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "alr stop saving msgs",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "no more food, sorry... we're done collecting messages i think",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "I wonder how many messages we have now... can you quickly save them and gimme all you've got?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "@Username, data collecting phase is over. give me your results, please",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Aaaaaand that should be enough data for the new task! Thanks for saving, you can stop now!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "well, enough data collected for now. could I have the results?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "yoooooo, all dem msgs are saved - stop now and gimme all you learned",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Okay, that would be all the messages... let's hope you didn't forget any!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "I know you love being fed with data, but making it up is quite hard, you know? let's stop for now.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "yup, we're done. gimme da results plz",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "You still hungry? Well, sorry, no more data for now.",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Aaaaaaall right, that's all the data I needed - you can stop",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "I'm done making up data, let's stop for now.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Sir, I have to ask you to stop saving my messages.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Okay, that's enough message saving. We will stop for now,",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "ay, data collecting sure is exhausting... good thing we're finally done!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "Finally! No more data, gimme the results!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "we're finally finished saving messages! so just send me what you've learned so I can get this over with.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "we're all done! good job! only thing left is for you to send me the json",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "alr, done saving messages. send me the json pls",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "that should be enough... gimme the messages you've saved so far",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  },
+  {
+    "MessageText": "And that's 50! No more data collecting for this task! You only need to send me the json file with the results now.",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.mldata.stoplearning"
+  }
+]

@@ -90,6 +90,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultModules\MLDataModule.cs" />
     <Compile Include="DefaultModules\PingModule.cs" />
     <Compile Include="DefaultModules\ReflectionModule.cs" />
     <Compile Include="Helpers\Extensions.cs" />
@@ -99,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Training\MLData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Training\Ping.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -127,7 +131,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties training_4reflection_1json__JsonSchema="TrainingData.schema.json" training_4trainingdata_1schema_1json__JsonSchema="http://json-schema.org/draft-04/schema" />
+      <UserProperties training_4mldata_1json__JsonSchema="TrainingData.schema.json" training_4trainingdata_1schema_1json__JsonSchema="http://json-schema.org/draft-04/schema" training_4reflection_1json__JsonSchema="TrainingData.schema.json" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
