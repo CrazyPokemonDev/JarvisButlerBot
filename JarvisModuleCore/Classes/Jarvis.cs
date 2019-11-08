@@ -34,7 +34,11 @@ namespace JarvisModuleCore.Classes
 
         private void Jarvis_OnMessageRedirect(object sender, MessageEventArgs e)
         {
-            if (e.Message.ReplyToMessage == null) OnMessage.Invoke(sender, e);
+            if (e.Message.ReplyToMessage == null)
+            {
+                OnMessage.Invoke(sender, e);
+                return;
+            }
             if (dontRedirectAnswers.Any(x => e.Message.ReplyToMessage.MessageId == x.Msg.MessageId && e.Message.Chat.Id == x.Msg.Chat.Id
                 && (x.UserWhitelist == null || x.UserWhitelist.Contains(e.Message.From.Id)))) return;
             OnMessage.Invoke(sender, e);
