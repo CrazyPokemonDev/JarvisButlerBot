@@ -7,6 +7,7 @@ using Microsoft.ML;
 using Microsoft.ML.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -34,6 +35,8 @@ namespace JarvisButlerBot
         private static readonly MLContext mlContext = new MLContext(seed: 0);
         private static ITransformer trainedModel;
         private static PredictionEngine<TaskPredictionInput, TaskPrediction> predictionEngine;
+        private static bool update = false;
+        private static readonly string gitDirectory = Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\..\\");
 
         #region Startup
         static void Main()
@@ -60,6 +63,16 @@ namespace JarvisButlerBot
             stopHandle.WaitOne();
             Console.WriteLine("Shutting down");
             jarvis.StopReceiving();
+
+            if (update)
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = Path.Combine(Environment.CurrentDirectory, "Update\\update.bat"),
+                    WorkingDirectory = gitDirectory
+                };
+                Process.Start(psi);
+            }
         }
 
         private static void SetupBaseDirectory()
@@ -187,10 +200,21 @@ namespace JarvisButlerBot
         #region Message Handling
         private static async void Jarvis_OnMessage(object sender, MessageEventArgs e)
         {
-            if (jarvis.IsGlobalAdmin(e.Message.From.Id) && e.Message.Type == MessageType.Text && (e.Message.Text == "/stop" || e.Message.Text == $"/stop@{jarvis.Username}"))
+            if (jarvis.IsGlobalAdmin(e.Message.From.Id) && e.Message.Type == MessageType.Text)
             {
-                await jarvis.ReplyAsync(e.Message, "Stopping the bot!");
-                stopHandle.Set();
+                if (e.Message.Text == "/stop" || e.Message.Text.ToLower() == $"/stop@{jarvis.Username.ToLower()}")
+                {
+                    await jarvis.ReplyAsync(e.Message, "Stopping the bot!");
+                    stopHandle.Set();
+                    return;
+                }
+                if (e.Message.Text == "/update" || e.Message.Text.ToLower() == $"/update@{jarvis.Username.ToLower()}")
+                {
+                    await jarvis.ReplyAsync(e.Message, "Updating the bot!");
+                    update = true;
+                    stopHandle.Set();
+                    return;
+                }
             }
 
             string text = e.Message.GetText();
@@ -229,7 +253,14 @@ namespace JarvisButlerBot
                     await jarvis.ReplyAsync(e.Message, "I believe this isn't possible in here, sorry!");
                     return;
                 }
-                task.Delegate.Invoke(e.Message, jarvis);
+                try
+                {
+                    task.Delegate.Invoke(e.Message, jarvis);
+                }
+                catch (Exception ex)
+                {
+                    await jarvis.ReplyAsync(e.Message, $"An error occurred in task {task.Attributes.TaskId}:\n{ex}");
+                }
             }
             else if (entities.Any(botCommandAtStart))
             {
@@ -242,7 +273,14 @@ namespace JarvisButlerBot
                     && x.Value.Attributes.PossibleChatTypes.HasFlag(chatType))
                 .Select(x => x.Value))
                 {
-                    task.Delegate.Invoke(e.Message, jarvis);
+                    try
+                    {
+                        task.Delegate.Invoke(e.Message, jarvis);
+                    }
+                    catch (Exception ex)
+                    {
+                        await jarvis.ReplyAsync(e.Message, $"An error occurred in task {task.Attributes.TaskId}:\n{ex}");
+                    }
                 }
             }
         }

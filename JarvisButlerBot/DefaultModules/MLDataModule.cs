@@ -35,26 +35,33 @@ namespace JarvisButlerBot.DefaultModules
             jarvis.OnMessage += Jarvis_OnMessage;
         }
 
-        private void Jarvis_OnMessage(object sender, MessageEventArgs e)
+        private async void Jarvis_OnMessage(object sender, MessageEventArgs e)
         {
-            if (!learning.ContainsKey(e.Message.From.Id)) return;
-            if (initialMessages.Contains(e.Message))
+            try
             {
-                initialMessages.Remove(e.Message);
-                return;
+                if (!learning.ContainsKey(e.Message.From.Id)) return;
+                if (initialMessages.Contains(e.Message))
+                {
+                    initialMessages.Remove(e.Message);
+                    return;
+                }
+                learning[e.Message.From.Id].Add(new TaskPredictionInput
+                {
+                    MessageText = e.Message.GetText().PrepareForPrediction(e.Message.GetEntities(), jarvis.Username),
+                    MessageType = e.Message.GetMessageType().ToString(),
+                    ChatType = e.Message.Chat.GetChatType().ToString(),
+                    HasReplyToMessage = (e.Message.ReplyToMessage != null).ToString(),
+                    TaskId = "%taskid%"
+                });
+                if (learning[e.Message.From.Id].Count >= 50 && !jarvis.IsGlobalAdmin(e.Message.From.Id))
+                {
+                    StopLearning(e.Message, jarvis);
+                    return;
+                }
             }
-            learning[e.Message.From.Id].Add(new TaskPredictionInput
+            catch (Exception ex)
             {
-                MessageText = e.Message.GetText().PrepareForPrediction(e.Message.GetEntities(), jarvis.Username),
-                MessageType = e.Message.GetMessageType().ToString(),
-                ChatType = e.Message.Chat.GetChatType().ToString(),
-                HasReplyToMessage = (e.Message.ReplyToMessage != null).ToString(),
-                TaskId = "%taskid%"
-            });
-            if (learning[e.Message.From.Id].Count >= 50 && !jarvis.IsGlobalAdmin(e.Message.From.Id))
-            {
-                StopLearning(e.Message, jarvis);
-                return;
+                await jarvis.ReplyAsync(e.Message, "An error occurred saving this message:\n" + ex);
             }
         }
 

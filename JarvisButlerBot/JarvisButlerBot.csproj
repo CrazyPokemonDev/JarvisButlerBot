@@ -110,6 +110,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Training\TrainingData.schema.json" />
+    <None Include="Update\update.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JarvisModuleCore\JarvisModuleCore.csproj">
