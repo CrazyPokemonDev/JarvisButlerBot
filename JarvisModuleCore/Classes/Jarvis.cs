@@ -92,8 +92,10 @@ namespace JarvisModuleCore.Classes
                 }
                 OnMessage += messageHandler;
                 sentMessage = await SendTextMessageAsync(chatId, text, parseMode, disableWebPagePreview, disableNotification, replyToMessageId, replyMarkup, cancellationToken);
-                dontRedirectAnswers.Add((sentMessage, userWhitelist));
+                (Message sentMessage, int[] userWhitelist) tuple = (sentMessage, userWhitelist);
+                dontRedirectAnswers.Add(tuple);
                 WaitHandle.WaitAny(new WaitHandle[] { cancellationToken.WaitHandle, mre.WaitHandle });
+                dontRedirectAnswers.Remove(tuple);
                 OnMessage -= messageHandler;
                 return replyMessage;
             }
