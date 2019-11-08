@@ -63,6 +63,7 @@ namespace JarvisButlerBot
             stopHandle.WaitOne();
             Console.WriteLine("Shutting down");
             jarvis.StopReceiving();
+            Thread.Sleep(1000); // Wait for Telegram.Bot to register the update message event as handled
 
             if (update)
             {
