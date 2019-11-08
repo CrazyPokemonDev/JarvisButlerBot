@@ -195,6 +195,7 @@ namespace JarvisButlerBot
             if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
             {
                 string hasReplyToMessage = (e.Message.ReplyToMessage != null).ToString();
+                Console.WriteLine(PrepareForPrediction(text, entities));
                 var input = new TaskPredictionInput
                 {
                     ChatType = chatType.ToString(),
@@ -245,7 +246,7 @@ namespace JarvisButlerBot
                 switch (entity.Type)
                 {
                     case MessageEntityType.Mention:
-                        if (text.Substring(entity.Offset, entity.Length).ToLower() == jarvis.Username.ToLower()) continue;
+                        if (text.Substring(entity.Offset, entity.Length).ToLower() == "@" + jarvis.Username.ToLower()) continue;
                         text = text.Substring(0, entity.Offset) + "@User" + text.Substring(entity.Offset + entity.Length);
                         foreach (var e in entities.Except(new MessageEntity[] { entity }))
                         {
@@ -261,7 +262,7 @@ namespace JarvisButlerBot
                         break;
                 }
             }
-            text = Regex.Replace(text, Regex.Escape($"@{jarvis.Username}".ToLower()), "@Username");
+            text = Regex.Replace(text, Regex.Escape($"@{jarvis.Username}".ToLower()), "@Username", RegexOptions.IgnoreCase);
             return text;
         }
 
