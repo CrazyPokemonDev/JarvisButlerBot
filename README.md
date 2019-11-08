@@ -40,7 +40,7 @@ For your module class to compile, you will have to override several things:
 - Id: a unique identifier string for your module, recommended to be used as a prefix for your task ids
 - Name: a name for your module
 - Version: a version number for your module. If you don't know what to use, go with ```Version.Parse("1.0.0")```
-- MLTrainingData: an array of TaskPredicitionInputs to train the model to recognize your tasks. I recommend about 50 elements per task. An example data set can be found [here](JarvisButlerBot/Training/Ping.json). For the prediction, the bots individual username will be replaced by `@Username`.
+- MLTrainingData: an array of TaskPredicitionInputs to train the model to recognize your tasks. I recommend about 50 elements per task. An example data set can be found [here](JarvisButlerBot/Training/Ping.json). For the prediction, the bots individual username will be replaced by `@Username`, usernames of other users by `@User` and inline mentions by `@Mention`.
 
 ## Publishing your modules
 If you wrote your own module and want it to be added to @JarvisButlerBot on Telegram, message me at [@Olfi01](http://t.me/Olfi01), I will happily add it if I think it fits!
