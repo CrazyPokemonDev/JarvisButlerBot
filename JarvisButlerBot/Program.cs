@@ -37,6 +37,7 @@ namespace JarvisButlerBot
         private static PredictionEngine<TaskPredictionInput, TaskPrediction> predictionEngine;
         private static bool update = false;
         private static bool restart = false;
+        private static int lastUpdateId = 0;
         private static readonly string gitDirectory = Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\..\\");
 
         #region Startup
@@ -64,6 +65,7 @@ namespace JarvisButlerBot
             stopHandle.WaitOne();
             Console.WriteLine("Shutting down");
             jarvis.StopReceiving();
+            jarvis.GetUpdatesAsync(offset: lastUpdateId + 1).Wait();
 
             if (update)
             {
@@ -218,7 +220,7 @@ namespace JarvisButlerBot
                     if (msg.Text == "/stop" || msg.Text.ToLower() == $"/stop@{jarvis.Username.ToLower()}")
                     {
                         await jarvis.ReplyAsync(msg, "Stopping the bot!");
-                        await jarvis.GetUpdatesAsync(offset: e.Update.Id + 1);
+                        lastUpdateId = e.Update.Id;
                         stopHandle.Set();
                         return;
                     }
@@ -226,7 +228,7 @@ namespace JarvisButlerBot
                     {
                         await jarvis.ReplyAsync(msg, "Updating the bot!");
                         update = true;
-                        await jarvis.GetUpdatesAsync(offset: e.Update.Id + 1);
+                        lastUpdateId = e.Update.Id;
                         stopHandle.Set();
                         return;
                     }
@@ -234,7 +236,7 @@ namespace JarvisButlerBot
                     {
                         await jarvis.ReplyAsync(msg, "Restarting the bot!");
                         restart = true;
-                        await jarvis.GetUpdatesAsync(offset: e.Update.Id + 1);
+                        lastUpdateId = e.Update.Id;
                         stopHandle.Set();
                         return;
                     }
