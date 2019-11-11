@@ -44,7 +44,7 @@ For your module class to compile, you will have to override several things:
 - MLTrainingData: an array of TaskPredicitionInputs to train the model to recognize your tasks. I recommend about 50 elements per task. An example data set can be found [here](JarvisButlerBot/Training/Ping.json). For the prediction, the bots individual username will be replaced by `@Username`, usernames of other users by `@User` and inline mentions by `@Mention`.
 
 ## Generating training data
-You can ask Jarvis to start saving your messages, he will then start doing so while still responding as normal. Once you ask him to stop, or if you're not a global admin, once you've hit 50 messages, he'll send you all the data of the messages he received from you, JSON-encoded in the right object format, with the taskid `%taskid%`, so you can just go and replace that with whatever task you want to use the data for! For example, [this data](JarvisButlerBot/Training/MLData.json) was generated that way.
+You can ask Jarvis to start saving your messages, he will then start doing so while still responding as normal. Once you ask him to stop, or if you're not a global admin, once you've hit 50 messages, he'll send you all the data of the messages he received from you, as c# code, with the taskid `%taskid%`, so you can just go and replace that with whatever task you want to use the data for! Formerly, this generated JSON, however this seemed more convenient to me.
 
 ## Official modules
 Apart from the default modules that are included in the main repository and releases, there currently is one other module that is being developed by the creator of the JARVIS bot:
