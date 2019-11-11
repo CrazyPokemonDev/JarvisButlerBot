@@ -103,6 +103,7 @@ namespace JarvisButlerBot.DefaultModules
             catch (Exception ex)
             {
                 await jarvis.ReplyAsync(message, "An exception occurred while downloading: " + ex.ToString());
+                return;
             }
             await jarvis.ReplyAsync(message, "Okay, the module has been downloaded. " +
                 "Use /restart if you want me to load it now or give me any libraries on which this module depends.");
@@ -135,6 +136,7 @@ namespace JarvisButlerBot.DefaultModules
             catch (Exception ex)
             {
                 await jarvis.ReplyAsync(message, "An exception occurred while downloading: " + ex.ToString());
+                return;
             }
             await jarvis.ReplyAsync(message, "Okay, the library has been downloaded.");
         }
