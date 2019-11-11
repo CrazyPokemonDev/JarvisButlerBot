@@ -36,6 +36,7 @@ namespace JarvisButlerBot
         private static ITransformer trainedModel;
         private static PredictionEngine<TaskPredictionInput, TaskPrediction> predictionEngine;
         private static bool update = false;
+        private static bool restart = false;
         private static readonly string gitDirectory = Path.Combine(Environment.CurrentDirectory, "..\\..\\..\\..\\");
 
         #region Startup
@@ -70,6 +71,15 @@ namespace JarvisButlerBot
                 var psi = new ProcessStartInfo
                 {
                     FileName = Path.Combine(Environment.CurrentDirectory, "Update\\update.bat"),
+                    WorkingDirectory = gitDirectory
+                };
+                Process.Start(psi);
+            }
+            else if (restart)
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = Path.Combine(Environment.CurrentDirectory, "Update\\restart.bat"),
                     WorkingDirectory = gitDirectory
                 };
                 Process.Start(psi);
@@ -213,6 +223,13 @@ namespace JarvisButlerBot
                 {
                     await jarvis.ReplyAsync(e.Message, "Updating the bot!");
                     update = true;
+                    stopHandle.Set();
+                    return;
+                }
+                if (e.Message.Text == "/restart" || e.Message.Text.ToLower() == $"/restart@{jarvis.Username.ToLower()}")
+                {
+                    await jarvis.ReplyAsync(e.Message, "Restarting the bot!");
+                    restart = true;
                     stopHandle.Set();
                     return;
                 }

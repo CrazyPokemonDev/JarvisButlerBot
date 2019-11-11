@@ -110,6 +110,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Training\TrainingData.schema.json" />
+    <None Include="Update\restart.bat" />
     <None Include="Update\update.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
