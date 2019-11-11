@@ -138,7 +138,12 @@ namespace JarvisButlerBot
                     foreach (var dependency in typeAttribute.Dependencies)
                     {
                         var fileToGet = Path.Combine(libraryDirectory, dependency);
-                        File.Copy(fileToGet, Path.GetFileName(fileToGet));
+                        if (dependency.Contains("\\")) Directory.CreateDirectory(Path.GetDirectoryName(dependency));
+                        try
+                        {
+                            File.Copy(fileToGet, dependency, true);
+                        }
+                        catch { }
                     }
                     JarvisModule module = (JarvisModule)type.GetConstructor(new Type[0]).Invoke(new object[0]);
                     if (Modules.Any(x => x.Id == module.Id && x.Version > module.Version)) continue;
