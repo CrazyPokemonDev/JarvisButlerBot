@@ -135,15 +135,15 @@ namespace JarvisButlerBot
                 {
                     var typeAttribute = type.GetCustomAttribute<JarvisModuleAttribute>();
                     if (typeAttribute == null) continue;
-                    JarvisModule module = (JarvisModule)type.GetConstructor(new Type[0]).Invoke(new object[0]);
-                    if (Modules.Any(x => x.Id == module.Id && x.Version > module.Version)) continue;
-                    else if (Modules.Any(x => x.Id == module.Id && x.Version == module.Version)) throw new Exception($"Two instances of module {module.Name}({module.Id}) with identical version found");
-                    else Modules.RemoveAll(x => x.Id == module.Id && x.Version < module.Version);
                     foreach (var dependency in typeAttribute.Dependencies)
                     {
                         var fileToGet = Path.Combine(libraryDirectory, dependency);
                         File.Copy(fileToGet, Path.GetFileName(fileToGet));
                     }
+                    JarvisModule module = (JarvisModule)type.GetConstructor(new Type[0]).Invoke(new object[0]);
+                    if (Modules.Any(x => x.Id == module.Id && x.Version > module.Version)) continue;
+                    else if (Modules.Any(x => x.Id == module.Id && x.Version == module.Version)) throw new Exception($"Two instances of module {module.Name}({module.Id}) with identical version found");
+                    else Modules.RemoveAll(x => x.Id == module.Id && x.Version < module.Version);
                     LoadModule(module);
                 }
             }
