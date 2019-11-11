@@ -124,7 +124,7 @@ namespace JarvisButlerBot.DefaultModules
                 await jarvis.ReplyAsync(message, "This file doesn't have the correct type!");
                 return;
             }
-            string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
+            string filePath = Path.Combine(Program.libraryDirectory, document.FileName);
             try
             {
                 if (File.Exists(filePath)) File.Delete(filePath);
