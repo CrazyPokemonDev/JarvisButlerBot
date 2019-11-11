@@ -22,7 +22,7 @@ namespace JarvisButlerBot.DefaultModules
     {
         public override string Id => "jarvis.default.reflection";
         public override string Name => "Reflection module";
-        public override Version Version => Version.Parse("1.0.0");
+        public override Version Version => Version.Parse("2.0.0");
         public override TaskPredictionInput[] MLTrainingData => TrainingData.Reflection;
         private Jarvis jarvis;
         private const int modulesPerPage = 3;
