@@ -5,6 +5,7 @@ A modular telegram bot and group butler that aims to understand your text messag
 Download a [release](https://github.com/CrazyPokemonDev/JarvisButlerBot/releases) or build the source yourself, execute the JarvisButlerBot.exe and enter your Telegram Bot Token.
 
 To install a module, copy the modules output dll file into the ```%APPDATA%\Crazypokemondev\JarvisButlerBot\modules``` folder and put all its dependency dll files into the ```%APPDATA%\Crazypokemondev\JarvisButlerBot\lib``` folder.
+You can skip any files that JarvisButlerBot itself depends on (those will already be loaded).
 
 ## Developing a module
 Create a .NET Framework Class Library project (currently, JARVIS runs on .NET Framework 4.7.2). 
