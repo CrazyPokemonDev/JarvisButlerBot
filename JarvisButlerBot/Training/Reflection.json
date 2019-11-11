@@ -704,349 +704,349 @@
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Upload this library, please",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "I need you to upload this library for that module",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "/uploadlibrary",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "upload library",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "here's a lib for you to upload jarvis",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "upload this lib pls",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "JARVIS, could you upload this library, please?",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "I need you to upload this library for the module you uploaded earlier",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "yo, upload this to the lib folder",
     "ChatType": "Private",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "hey jarvis, this needs to go to the lib folder",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "I need this module to be in the library folder, please",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "can u pls upload this as a library",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "upload this library",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "hey jarvis, go upload that lib for me, will you?",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "I need you to upload this library for me, please",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Hey JARVIS, please upload this library for me, okay?",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "upload this lib, the module needs it",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "I need you to upload this library for me, please",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Library. Upload. Go.",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Upload this library please @Username",
     "ChatType": "Group",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username here's a library for you to upload",
     "ChatType": "Group",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Upload this to the lib folder",
     "ChatType": "Group",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "upload to library folder",
     "ChatType": "Group",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username upload, library",
     "ChatType": "Group",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username, here's a library to upload for u",
     "ChatType": "Group",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username pls upload this library",
     "ChatType": "Group",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username this should go to the library folder",
     "ChatType": "Group",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "put this into the lib folder @Username",
     "ChatType": "Group",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "only thing left is for @Username to put this into the library folder",
     "ChatType": "Group",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Also, the module requires this library.",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "here's one of the libraries",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "and another library",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "That module sure needs a lot of libraries",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "new library version",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username upload this library",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "/uploadlibrary@Username",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "upload lib",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username this is a library. do your job.",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username library. You know what to do.",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username please upload this lib",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username new library version, pls upload",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "hey @Username, library here. gotta upload.",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Upload this library, please, @Username :)",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "Okay, only thing left is to upload this library. Go for it, @Username!",
     "ChatType": "Supergroup",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username, can you upload this library?",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "And here's the required library. @Username, pls upload",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username, I need you to upload this library please",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username, update this library's version, please",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   },
   {
     "MessageText": "@Username this library wants an upload",
     "ChatType": "Supergroup",
     "MessageType": "Document",
     "HasReplyToMessage": "False",
-    "TaskId": "%taskid%"
+    "TaskId": "jarvis.default.reflection.uploadlibrary"
   }
 ]
