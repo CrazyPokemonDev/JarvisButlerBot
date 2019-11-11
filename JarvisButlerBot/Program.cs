@@ -54,7 +54,7 @@ namespace JarvisButlerBot
 
             Console.WriteLine("Waking up JARVIS");
             jarvis = new Jarvis(token: File.ReadAllText(botTokenPath), File.ReadAllLines(globalAdminsPath).Select(x => int.Parse(x)).ToArray());
-            jarvis.OnMessage += Jarvis_OnMessage;
+            jarvis.OnUpdate += Jarvis_OnUpdate;
             jarvis.StartReceiving();
 
             Console.WriteLine("Signaling start to modules");
@@ -64,7 +64,6 @@ namespace JarvisButlerBot
             stopHandle.WaitOne();
             Console.WriteLine("Shutting down");
             jarvis.StopReceiving();
-            Thread.Sleep(1000); // Wait for Telegram.Bot to register the update message event as handled
 
             if (update)
             {
@@ -209,95 +208,102 @@ namespace JarvisButlerBot
         #endregion
 
         #region Message Handling
-        private static async void Jarvis_OnMessage(object sender, MessageEventArgs e)
+        private static async void Jarvis_OnUpdate(object sender, UpdateEventArgs e)
         {
-            if (jarvis.IsGlobalAdmin(e.Message.From.Id) && e.Message.Type == MessageType.Text)
+            if (e.Update.Type == UpdateType.Message)
             {
-                if (e.Message.Text == "/stop" || e.Message.Text.ToLower() == $"/stop@{jarvis.Username.ToLower()}")
+                var msg = e.Update.Message;
+                if (jarvis.IsGlobalAdmin(msg.From.Id) && msg.Type == MessageType.Text)
                 {
-                    await jarvis.ReplyAsync(e.Message, "Stopping the bot!");
-                    stopHandle.Set();
-                    return;
+                    if (msg.Text == "/stop" || msg.Text.ToLower() == $"/stop@{jarvis.Username.ToLower()}")
+                    {
+                        await jarvis.ReplyAsync(msg, "Stopping the bot!");
+                        await jarvis.GetUpdatesAsync(offset: e.Update.Id + 1);
+                        stopHandle.Set();
+                        return;
+                    }
+                    if (msg.Text == "/update" || msg.Text.ToLower() == $"/update@{jarvis.Username.ToLower()}")
+                    {
+                        await jarvis.ReplyAsync(msg, "Updating the bot!");
+                        update = true;
+                        await jarvis.GetUpdatesAsync(offset: e.Update.Id + 1);
+                        stopHandle.Set();
+                        return;
+                    }
+                    if (msg.Text == "/restart" || msg.Text.ToLower() == $"/restart@{jarvis.Username.ToLower()}")
+                    {
+                        await jarvis.ReplyAsync(msg, "Restarting the bot!");
+                        restart = true;
+                        await jarvis.GetUpdatesAsync(offset: e.Update.Id + 1);
+                        stopHandle.Set();
+                        return;
+                    }
                 }
-                if (e.Message.Text == "/update" || e.Message.Text.ToLower() == $"/update@{jarvis.Username.ToLower()}")
-                {
-                    await jarvis.ReplyAsync(e.Message, "Updating the bot!");
-                    update = true;
-                    stopHandle.Set();
-                    return;
-                }
-                if (e.Message.Text == "/restart" || e.Message.Text.ToLower() == $"/restart@{jarvis.Username.ToLower()}")
-                {
-                    await jarvis.ReplyAsync(e.Message, "Restarting the bot!");
-                    restart = true;
-                    stopHandle.Set();
-                    return;
-                }
-            }
 
-            string text = e.Message.GetText();
-            if (string.IsNullOrWhiteSpace(text)) return;
-            MessageEntity[] entities = e.Message.GetEntities();
+                string text = msg.GetText();
+                if (string.IsNullOrWhiteSpace(text)) return;
+                MessageEntity[] entities = msg.GetEntities();
 
-            bool botCommandAtStart(MessageEntity x) => x.Type == MessageEntityType.BotCommand && x.Offset == 0;
-            PossibleMessageTypes msgType = e.Message.GetMessageType();
-            PossibleChatTypes chatType = e.Message.Chat.GetChatType();
+                bool botCommandAtStart(MessageEntity x) => x.Type == MessageEntityType.BotCommand && x.Offset == 0;
+                PossibleMessageTypes msgType = msg.GetMessageType();
+                PossibleChatTypes chatType = msg.Chat.GetChatType();
 
-            if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || e.Message.Chat.Type == ChatType.Private || e.Message.ReplyToMessage?.From?.Id == jarvis.BotId)
-            {
-                string hasReplyToMessage = (e.Message.ReplyToMessage != null).ToString();
-                var input = new TaskPredictionInput
+                if (text.ToLower().Contains($"@{jarvis.Username}".ToLower()) || msg.Chat.Type == ChatType.Private || msg.ReplyToMessage?.From?.Id == jarvis.BotId)
                 {
-                    ChatType = chatType.ToString(),
-                    HasReplyToMessage = hasReplyToMessage,
-                    MessageText = text.PrepareForPrediction(entities, jarvis.Username),
-                    MessageType = msgType.ToString()
-                };
-                var prediction = predictionEngine.Predict(input);
-                var taskId = prediction.TaskId;
-                /*VBuffer<ReadOnlyMemory<char>> names = default;
-                predictionEngine.OutputSchema["Score"].Annotations.GetValue("SlotNames", ref names);
-                for (int i = 0; i < prediction.Score.Length; i++) Console.WriteLine("{0}: {1}", names.GetItemOrDefault(i), prediction.Score[i]);*/
+                    string hasReplyToMessage = (msg.ReplyToMessage != null).ToString();
+                    var input = new TaskPredictionInput
+                    {
+                        ChatType = chatType.ToString(),
+                        HasReplyToMessage = hasReplyToMessage,
+                        MessageText = text.PrepareForPrediction(entities, jarvis.Username),
+                        MessageType = msgType.ToString()
+                    };
+                    var prediction = predictionEngine.Predict(input);
+                    var taskId = prediction.TaskId;
+                    /*VBuffer<ReadOnlyMemory<char>> names = default;
+                    predictionEngine.OutputSchema["Score"].Annotations.GetValue("SlotNames", ref names);
+                    for (int i = 0; i < prediction.Score.Length; i++) Console.WriteLine("{0}: {1}", names.GetItemOrDefault(i), prediction.Score[i]);*/
 
-                if (!Tasks.ContainsKey(taskId))
-                {
-                    Parallel.ForEach(jarvis.GlobalAdmins, async x => await jarvis.SendTextMessageAsync(x, $"I wanted to execute the task with ID {taskId}, but I couldn't find it!"));
-                    return;
-                }
-                var task = Tasks[taskId];
-                if (!task.Attributes.PossibleMessageTypes.HasFlag(msgType)) return;
-                if (!task.Attributes.PossibleChatTypes.HasFlag(chatType))
-                {
-                    await jarvis.ReplyAsync(e.Message, "I believe this isn't possible in here, sorry!");
-                    return;
-                }
-                try
-                {
-                    task.Delegate.Invoke(e.Message, jarvis);
-                }
-                catch (Exception ex)
-                {
-                    await jarvis.ReplyAsync(e.Message, $"An error occurred in task {task.Attributes.TaskId}:\n{ex}");
-                }
-            }
-            else if (entities.Any(botCommandAtStart))
-            {
-                var entity = entities.First(botCommandAtStart);
-                string cmd = text.Substring(entity.Offset, entity.Length);
-                if (cmd.Contains("@")) return;
-
-                foreach (var task in Tasks.Where(x => x.Value.Attributes.Commands.Select(y => y.ToLower()).Contains(cmd.ToLower())
-                    && x.Value.Attributes.PossibleMessageTypes.HasFlag(msgType)
-                    && x.Value.Attributes.PossibleChatTypes.HasFlag(chatType))
-                .Select(x => x.Value))
-                {
+                    if (!Tasks.ContainsKey(taskId))
+                    {
+                        Parallel.ForEach(jarvis.GlobalAdmins, async x => await jarvis.SendTextMessageAsync(x, $"I wanted to execute the task with ID {taskId}, but I couldn't find it!"));
+                        return;
+                    }
+                    var task = Tasks[taskId];
+                    if (!task.Attributes.PossibleMessageTypes.HasFlag(msgType)) return;
+                    if (!task.Attributes.PossibleChatTypes.HasFlag(chatType))
+                    {
+                        await jarvis.ReplyAsync(msg, "I believe this isn't possible in here, sorry!");
+                        return;
+                    }
                     try
                     {
-                        task.Delegate.Invoke(e.Message, jarvis);
+                        task.Delegate.Invoke(msg, jarvis);
                     }
                     catch (Exception ex)
                     {
-                        await jarvis.ReplyAsync(e.Message, $"An error occurred in task {task.Attributes.TaskId}:\n{ex}");
+                        await jarvis.ReplyAsync(msg, $"An error occurred in task {task.Attributes.TaskId}:\n{ex}");
+                    }
+                }
+                else if (entities.Any(botCommandAtStart))
+                {
+                    var entity = entities.First(botCommandAtStart);
+                    string cmd = text.Substring(entity.Offset, entity.Length);
+                    if (cmd.Contains("@")) return;
+
+                    foreach (var task in Tasks.Where(x => x.Value.Attributes.Commands.Select(y => y.ToLower()).Contains(cmd.ToLower())
+                        && x.Value.Attributes.PossibleMessageTypes.HasFlag(msgType)
+                        && x.Value.Attributes.PossibleChatTypes.HasFlag(chatType))
+                    .Select(x => x.Value))
+                    {
+                        try
+                        {
+                            task.Delegate.Invoke(msg, jarvis);
+                        }
+                        catch (Exception ex)
+                        {
+                            await jarvis.ReplyAsync(msg, $"An error occurred in task {task.Attributes.TaskId}:\n{ex}");
+                        }
                     }
                 }
             }
