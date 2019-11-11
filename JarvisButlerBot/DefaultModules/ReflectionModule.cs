@@ -92,10 +92,17 @@ namespace JarvisButlerBot.DefaultModules
                 return;
             }
             string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
-            if (File.Exists(filePath)) File.Delete(filePath);
-            using (var stream = File.OpenWrite(filePath))
+            try
             {
-                await jarvis.GetInfoAndDownloadFileAsync(document.FileId, stream);
+                if (File.Exists(filePath)) File.Delete(filePath);
+                using (var stream = File.OpenWrite(filePath))
+                {
+                    await jarvis.GetInfoAndDownloadFileAsync(document.FileId, stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                await jarvis.ReplyAsync(message, "An exception occurred while downloading: " + ex.ToString());
             }
             await jarvis.ReplyAsync(message, "Okay, the module has been downloaded. " +
                 "Use /restart if you want me to load it now or give me any libraries on which this module depends.");
@@ -117,10 +124,17 @@ namespace JarvisButlerBot.DefaultModules
                 return;
             }
             string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
-            if (File.Exists(filePath)) File.Delete(filePath);
-            using (var stream = File.OpenWrite(filePath))
+            try
             {
-                await jarvis.GetInfoAndDownloadFileAsync(document.FileId, stream);
+                if (File.Exists(filePath)) File.Delete(filePath);
+                using (var stream = File.OpenWrite(filePath))
+                {
+                    await jarvis.GetInfoAndDownloadFileAsync(document.FileId, stream);
+                }
+            }
+            catch (Exception ex)
+            {
+                await jarvis.ReplyAsync(message, "An exception occurred while downloading: " + ex.ToString());
             }
             await jarvis.ReplyAsync(message, "Okay, the library has been downloaded.");
         }
