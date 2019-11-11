@@ -86,9 +86,9 @@ namespace JarvisButlerBot.DefaultModules
                 return;
             }
             var document = message.Document ?? message.ReplyToMessage.Document;
-            if (document.MimeType != "application/x-msdownload")
+            if (!document.FileName.EndsWith(".dll"))
             {
-                await jarvis.ReplyAsync(message, "This file doesn't have the correct MIME type!");
+                await jarvis.ReplyAsync(message, "This file doesn't have the correct type!");
                 return;
             }
             string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
@@ -111,9 +111,9 @@ namespace JarvisButlerBot.DefaultModules
                 return;
             }
             var document = message.Document ?? message.ReplyToMessage.Document;
-            if (document.MimeType != "application/x-msdownload")
+            if (!document.FileName.EndsWith(".dll"))
             {
-                await jarvis.ReplyAsync(message, "This file doesn't have the correct MIME type!");
+                await jarvis.ReplyAsync(message, "This file doesn't have the correct type!");
                 return;
             }
             string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
