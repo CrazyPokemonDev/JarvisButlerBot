@@ -25,6 +25,7 @@ namespace JarvisButlerBot
     {
         private static readonly string baseDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Crazypokemondev\\JarvisButlerBot\\");
         internal static readonly string moduleDirectory = Path.Combine(baseDirectory, "modules");
+        internal static readonly string newModuleDirectory = Path.Combine(baseDirectory, "new_modules");
         internal static readonly string libraryDirectory = Path.Combine(baseDirectory, "lib");
         private static readonly string botTokenPath = Path.Combine(baseDirectory, "bot.token");
         private static readonly string globalAdminsPath = Path.Combine(baseDirectory, "globalAdmins.txt");
@@ -45,6 +46,9 @@ namespace JarvisButlerBot
         {
             Console.WriteLine("Setting up base directory");
             SetupBaseDirectory();
+
+            Console.WriteLine("Copying new versions of modules");
+            MoveNewModules();
 
             Console.WriteLine("Loading Modules");
             LoadDefaultModules();
@@ -100,6 +104,17 @@ namespace JarvisButlerBot
             if (!File.Exists(globalAdminsPath))
             {
                 File.WriteAllText(globalAdminsPath, "267376056");
+            }
+        }
+
+        private static void MoveNewModules()
+        {
+            foreach (var file in Directory.CreateDirectory(newModuleDirectory).EnumerateFiles())
+            {
+                if (file.Extension != ".dll") continue;
+                string newFilePath = Path.Combine(moduleDirectory, file.Name);
+                if (File.Exists(newFilePath)) File.Delete(newFilePath);
+                file.MoveTo(newFilePath);
             }
         }
 
