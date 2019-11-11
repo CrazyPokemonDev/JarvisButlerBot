@@ -672,14 +672,14 @@
     "TaskId": "jarvis.default.mldata.stoplearning"
   },
   {
-    "MessageText": "we're all done! good job! only thing left is for you to send me the json",
+    "MessageText": "we're all done! good job! only thing left is for you to send me the txt",
     "ChatType": "Group",
     "MessageType": "Text",
     "HasReplyToMessage": "True",
     "TaskId": "jarvis.default.mldata.stoplearning"
   },
   {
-    "MessageText": "alr, done saving messages. send me the json pls",
+    "MessageText": "alr, done saving messages. send me the txt pls",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "False",
@@ -693,7 +693,7 @@
     "TaskId": "jarvis.default.mldata.stoplearning"
   },
   {
-    "MessageText": "And that's 50! No more data collecting for this task! You only need to send me the json file with the results now.",
+    "MessageText": "And that's 50! No more data collecting for this task! You only need to send me the txt file with the results now.",
     "ChatType": "Private",
     "MessageType": "Text",
     "HasReplyToMessage": "False",

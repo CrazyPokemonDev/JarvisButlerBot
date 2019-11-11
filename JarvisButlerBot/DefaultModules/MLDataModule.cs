@@ -85,11 +85,22 @@ namespace JarvisButlerBot.DefaultModules
             var learnedData = learning[message.From.Id];
             learning.Remove(message.From.Id);
             var tempFilePath = Path.GetTempFileName();
-            File.WriteAllText(tempFilePath, JsonConvert.SerializeObject(learnedData.ToArray(), Formatting.Indented));
+            File.WriteAllText(tempFilePath, MakeCsharpCode(learnedData.ToArray()));
             using (var stream = File.OpenRead(tempFilePath))
             {
-                await jarvis.SendDocumentAsync(message.Chat.Id, new InputOnlineFile(stream, "learned.json"), caption: "Okay, here is all the data I collected.");
+                await jarvis.SendDocumentAsync(message.Chat.Id, new InputOnlineFile(stream, "learned.txt"), caption: "Okay, here is all the data I collected.");
             }
+        }
+
+        public string MakeCsharpCode(TaskPredictionInput[] data)
+        {
+            return $"new TaskPredictionInput[] {{\n{string.Join(",\n", data.Select(x => "\t" + MakeCsharpCode(x)))}\n}}";
+        }
+
+        public string MakeCsharpCode(TaskPredictionInput obj)
+        {
+            return $"new TaskPredicitionInput{{ MessageText = \"{obj.MessageText}\", MessageType = \"{obj.MessageType}\", " +
+                $"ChatType = \"{obj.ChatType}\", HasReplyToMessage = \"{obj.HasReplyToMessage}\", TaskId = \"{obj.TaskId}\" }}";
         }
     }
 }
