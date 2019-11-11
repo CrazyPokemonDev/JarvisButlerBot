@@ -2,7 +2,7 @@
 A modular telegram bot and group butler that aims to understand your text messages.
 
 ## Setup
-Download a release (TODO) or build the source yourself, execute the JarvisButlerBot.exe and enter your Telegram Bot Token.
+Download a [release](https://github.com/CrazyPokemonDev/JarvisButlerBot/releases) or build the source yourself, execute the JarvisButlerBot.exe and enter your Telegram Bot Token.
 
 To install a module, copy the modules output dll file into the ```%APPDATA%\Crazypokemondev\JarvisButlerBot\modules``` folder and put all its dependency dll files into the ```%APPDATA%\Crazypokemondev\JarvisButlerBot\lib``` folder.
 
@@ -44,6 +44,10 @@ For your module class to compile, you will have to override several things:
 
 ## Generating training data
 You can ask Jarvis to start saving your messages, he will then start doing so while still responding as normal. Once you ask him to stop, or if you're not a global admin, once you've hit 50 messages, he'll send you all the data of the messages he received from you, JSON-encoded in the right object format, with the taskid `%taskid%`, so you can just go and replace that with whatever task you want to use the data for! For example, [this data](JarvisButlerBot/Training/MLData.json) was generated that way.
+
+## Official modules
+Apart from the default modules that are included in the main repository and releases, there currently is one other module that is being developed by the creator of the JARVIS bot:
+- [JarvisGroupButlerModule](https://github.com/CrazyPokemonDev/JarvisGroupButlerModule)
 
 ## Publishing your modules
 If you wrote your own module and want it to be added to @JarvisButlerBot on Telegram, message me at [@Olfi01](http://t.me/Olfi01), I will happily add it if I think it fits!
