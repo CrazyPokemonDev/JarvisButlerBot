@@ -5,6 +5,7 @@ using JarvisModuleCore.Classes;
 using JarvisModuleCore.ML;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+using File = System.IO.File;
 
 namespace JarvisButlerBot.DefaultModules
 {
@@ -73,5 +75,54 @@ namespace JarvisButlerBot.DefaultModules
             await jarvis.EditMessageTextAsync(e.CallbackQuery.Message.Chat.Id, e.CallbackQuery.Message.MessageId, modulePage, replyMarkup: GetReplyMarkup(page), parseMode: ParseMode.Html);
         }
         #endregion
+
+        [JarvisTask("jarvis.default.reflection.uploadmodule", Command = "/uploadmodule", PossibleMessageTypes = PossibleMessageTypes.AllExceptPoll)]
+        public async void UploadModule(Message message, Jarvis jarvis)
+        {
+            if (message.Type != MessageType.Document && message.ReplyToMessage?.Type != MessageType.Document) return;
+            if (!jarvis.IsGlobalAdmin(message.From.Id))
+            {
+                await jarvis.ReplyAsync(message, "Sorry, but I can't take this command from you!");
+                return;
+            }
+            var document = message.Document ?? message.ReplyToMessage.Document;
+            if (document.MimeType != "application/x-msdownload")
+            {
+                await jarvis.ReplyAsync(message, "This file doesn't have the correct MIME type!");
+                return;
+            }
+            string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
+            if (File.Exists(filePath)) File.Delete(filePath);
+            using (var stream = File.OpenWrite(filePath))
+            {
+                await jarvis.GetInfoAndDownloadFileAsync(document.FileId, stream);
+            }
+            await jarvis.ReplyAsync(message, "Okay, the module has been downloaded. " +
+                "Use /restart if you want me to load it now or give me any libraries on which this module depends.");
+        }
+
+        [JarvisTask("jarvis.default.reflection.uploadlibrary", Command = "uploadlibrary", PossibleMessageTypes = PossibleMessageTypes.AllExceptPoll)]
+        public async void UploadLibrary(Message message, Jarvis jarvis)
+        {
+            if (message.Type != MessageType.Document && message.ReplyToMessage?.Type != MessageType.Document) return;
+            if (!jarvis.IsGlobalAdmin(message.From.Id))
+            {
+                await jarvis.ReplyAsync(message, "Sorry, but I can't take this command from you!");
+                return;
+            }
+            var document = message.Document ?? message.ReplyToMessage.Document;
+            if (document.MimeType != "application/x-msdownload")
+            {
+                await jarvis.ReplyAsync(message, "This file doesn't have the correct MIME type!");
+                return;
+            }
+            string filePath = Path.Combine(Program.moduleDirectory, document.FileName);
+            if (File.Exists(filePath)) File.Delete(filePath);
+            using (var stream = File.OpenWrite(filePath))
+            {
+                await jarvis.GetInfoAndDownloadFileAsync(document.FileId, stream);
+            }
+            await jarvis.ReplyAsync(message, "Okay, the library has been downloaded.");
+        }
     }
 }

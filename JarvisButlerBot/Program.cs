@@ -24,8 +24,8 @@ namespace JarvisButlerBot
     class Program
     {
         private static readonly string baseDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Crazypokemondev\\JarvisButlerBot\\");
-        private static readonly string moduleDirectory = Path.Combine(baseDirectory, "modules");
-        private static readonly string libraryDirectory = Path.Combine(baseDirectory, "lib");
+        internal static readonly string moduleDirectory = Path.Combine(baseDirectory, "modules");
+        internal static readonly string libraryDirectory = Path.Combine(baseDirectory, "lib");
         private static readonly string botTokenPath = Path.Combine(baseDirectory, "bot.token");
         private static readonly string globalAdminsPath = Path.Combine(baseDirectory, "globalAdmins.txt");
         private static Jarvis jarvis;
@@ -286,7 +286,7 @@ namespace JarvisButlerBot
                 string cmd = text.Substring(entity.Offset, entity.Length);
                 if (cmd.Contains("@")) return;
 
-                foreach (var task in Tasks.Where(x => x.Value.Attributes.Commands.Contains(cmd)
+                foreach (var task in Tasks.Where(x => x.Value.Attributes.Commands.Select(y => y.ToLower()).Contains(cmd.ToLower())
                     && x.Value.Attributes.PossibleMessageTypes.HasFlag(msgType)
                     && x.Value.Attributes.PossibleChatTypes.HasFlag(chatType))
                 .Select(x => x.Value))

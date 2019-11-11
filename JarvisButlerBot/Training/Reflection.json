@@ -348,5 +348,355 @@
     "MessageType": "Text",
     "HasReplyToMessage": "False",
     "TaskId": "jarvis.default.reflection.modulelist"
+  },
+  {
+    "MessageText": "Upload this module please",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Hey JARVIS, can you upload this module for me real quick?",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Please upload this module",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Hey, I got you a new module! Please install it :)",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "A new module for you, Jarvis!",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "/uploadmodule",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "upload module",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "install module",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "pls install this module k",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "jarvis, there's a module waiting for you to install it",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "INSTALL THIS MODULE RIGHT NOW!",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "I'd be happy if you could install this module for me",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "and here's the new version of the module! go update it",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "New update for the module",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "new module, pls install",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Hey JARVIS, upload this module and install it, will you?",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "I'd like you to upload this module, please",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "A new module to upload for you, JARVIS",
+    "ChatType": "Private",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "I finished the latest version of this module, so now you can install it",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Yo, new update for this module",
+    "ChatType": "Private",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "New module version is out!",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username, here's a new version of the module. Could you upload it, please?",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Heyyyyyyyyyyyyyy @Username, new module!",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "New module!🎉🎉🎉🎉",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Alright, there is a new version for this module. JARVIS, would you do the honors?",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "I finally finished version 2! Please upload, @Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "I want you to upload this module please, @Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Install this new module please, @Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "The new version of the module is ready to be installed!",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username install this",
+    "ChatType": "Supergroup",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "yo JARVIS, there's a new module I need you to install.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username, here is a new module version that needs to be installed.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username, a new module to upload",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "upload this module @Username",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Another module to add to your collection, @Username!",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username that's a new module, you know what to do.",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Someone developed a new module for you, @Username! Wanna install it?",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username module to update",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username new version for one of your modules is here",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "module delivery for @Username, requesting upload",
+    "ChatType": "Supergroup",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username, can you upload this module please?",
+    "ChatType": "Group",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "I'd like you to install this, @Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "module",
+    "ChatType": "Group",
+    "MessageType": "Document",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "/uploadModule@Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "there's a new module for u, @Username",
+    "ChatType": "Group",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Hey look, they updated this module! @Username, upload it right away!",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Aaaaaaaaaaaaaand finally finished the initial version of this module. @Username, your turn.",
+    "ChatType": "Group",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "7UPLOADMODULE@Username",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "Finally, the new module is finished! @Username, this is for you!",
+    "ChatType": "Group",
+    "MessageType": "Document",
+    "HasReplyToMessage": "False",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
+  },
+  {
+    "MessageText": "@Username this module needs to be uploaded",
+    "ChatType": "Group",
+    "MessageType": "Text",
+    "HasReplyToMessage": "True",
+    "TaskId": "jarvis.default.reflection.uploadmodule"
   }
 ]
