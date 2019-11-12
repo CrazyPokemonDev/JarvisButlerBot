@@ -99,7 +99,7 @@ namespace JarvisButlerBot.DefaultModules
 
         public string MakeCsharpCode(TaskPredictionInput obj)
         {
-            return $"new TaskPredicitionInput{{ MessageText = \"{obj.MessageText}\", MessageType = \"{obj.MessageType}\", " +
+            return $"new TaskPredictionInput{{ MessageText = \"{obj.MessageText}\", MessageType = \"{obj.MessageType}\", " +
                 $"ChatType = \"{obj.ChatType}\", HasReplyToMessage = \"{obj.HasReplyToMessage}\", TaskId = \"{obj.TaskId}\" }}";
         }
     }
