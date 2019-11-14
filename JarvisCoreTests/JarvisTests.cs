@@ -38,20 +38,20 @@ namespace JarvisCoreTests
         }
 
         [TestMethod]
-        public async void SendMessageAndWaitForReplyTest()
+        public void SendMessageAndWaitForReplyTest()
         {
             const string messageText = "Please reply to this message!";
-            var messageReplied = await jarvis.SendTextMessageAndWaitForReplyAsync(testUserId, messageText);
+            var messageReplied = jarvis.SendTextMessageAndWaitForReplyAsync(testUserId, messageText).Result;
 
             Assert.IsNotNull(messageReplied.ReplyToMessage);
             Assert.AreEqual(messageReplied.ReplyToMessage.Text, messageText);
         }
 
         [TestMethod]
-        public async void ReplyMessageTest()
+        public void ReplyMessageTest()
         {
-            var message1 = await jarvis.SendTextMessageAsync(testUserId, "This is a test message.");
-            var message2 = await jarvis.ReplyAsync(message1, "This is a test reply.");
+            var message1 = jarvis.SendTextMessageAsync(testUserId, "This is a test message.").Result;
+            var message2 = jarvis.ReplyAsync(message1, "This is a test reply.").Result;
 
             Assert.IsNotNull(message2.ReplyToMessage);
             Assert.AreEqual(message1.MessageId, message2.ReplyToMessage.MessageId);

@@ -36,12 +36,12 @@ namespace JarvisModuleCore.Classes
         {
             if (e.Message.ReplyToMessage == null)
             {
-                OnMessage.Invoke(sender, e);
+                OnMessage?.Invoke(sender, e);
                 return;
             }
             if (dontRedirectAnswers.Any(x => e.Message.ReplyToMessage.MessageId == x.Msg.MessageId && e.Message.Chat.Id == x.Msg.Chat.Id
                 && (x.UserWhitelist == null || x.UserWhitelist.Contains(e.Message.From.Id)))) return;
-            OnMessage.Invoke(sender, e);
+            else OnMessage?.Invoke(sender, e);
         }
 
         /// <summary>
@@ -90,13 +90,13 @@ namespace JarvisModuleCore.Classes
                         }
                     });
                 }
-                OnMessage += messageHandler;
+                base.OnMessage += messageHandler;
                 sentMessage = await SendTextMessageAsync(chatId, text, parseMode, disableWebPagePreview, disableNotification, replyToMessageId, replyMarkup, cancellationToken);
                 (Message sentMessage, int[] userWhitelist) tuple = (sentMessage, userWhitelist);
                 dontRedirectAnswers.Add(tuple);
                 WaitHandle.WaitAny(new WaitHandle[] { cancellationToken.WaitHandle, mre.WaitHandle });
                 dontRedirectAnswers.Remove(tuple);
-                OnMessage -= messageHandler;
+                base.OnMessage -= messageHandler;
                 return replyMessage;
             }
         }
