@@ -37,6 +37,8 @@ public async void ExampleTask(Telegram.Bot.Types.Message message, Jarvis jarvis)
   …
 }
 ```
+This method will be called every time JARVIS either recognizes one of the commands you set in the attribute or the ML module predicts your Task ID for a message. The Message will not necessarily be a text message, but it will definitely contain text as either a caption, normal text or the question of a poll.
+
 For your module class to compile, you will have to override several things:
 - Id: a unique identifier string for your module, recommended to be used as a prefix for your task ids
 - Name: a name for your module
