@@ -18,10 +18,10 @@ namespace JarvisCoreTests
         public void Init()
         {
             rnd = new Random();
-            dynamic testConfig = JsonConvert.DeserializeObject(File.ReadAllText("test_config.json"));
-            globalAdmins = testConfig.global_admins;
-            testUserId = testConfig.test_user;
-            jarvis = new Jarvis(testConfig.bot_token, testConfig.global_admins);
+            TestConfig testConfig = JsonConvert.DeserializeObject<TestConfig>(File.ReadAllText("test_config.json"));
+            globalAdmins = testConfig.GlobalAdmins;
+            testUserId = testConfig.TestUser;
+            jarvis = new Jarvis(testConfig.BotToken, testConfig.GlobalAdmins);
             jarvis.StartReceiving();
         }
 
