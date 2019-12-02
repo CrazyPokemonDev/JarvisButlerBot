@@ -10,4 +10,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: curl http://api.telegram.org/bot${{secrets.BOT_TOKEN}}/sendMessage?text=A%20new%20commit%20has%20been%20pushed%21%20Do%20you%20want%20to%20%2Fupdate%3F&chat_id=${{secrets.ADMIN_USER}}
+      run: curl https://api.telegram.org/bot${{secrets.BOT_TOKEN}}/sendMessage?text=A%20new%20commit%20has%20been%20pushed%21%20Do%20you%20want%20to%20%2Fupdate%3F&chat_id=${{secrets.ADMIN_USER}}
